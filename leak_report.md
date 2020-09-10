@@ -21,5 +21,6 @@ at line 41 of function strip
 at line 62 of function is_clean
 at line 87 of function main
 
-Use free() to free up memory within one of these functions.
+Memory leaks whenever is_cleaned calls strip, because strip allocates memory. To fix, you have to
+free(cleaned) after strip is used to free up the memory.
 
